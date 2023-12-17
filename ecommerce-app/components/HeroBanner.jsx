@@ -4,7 +4,7 @@ import React from 'react'
 import { urlFor } from '../lib/client'
 
 const HeroBanner = ({heroBanner}) => {
-   
+    
   return (
     <div className='hero-banner-container'>
         <div>
@@ -19,7 +19,7 @@ const HeroBanner = ({heroBanner}) => {
             </h1>
             <img src={urlFor(heroBanner.image)} alt="headphones" className='hero-banner-image' />
             <div>
-                <Link href={`/products/${heroBanner}`}>
+                <Link href={`/product/${heroBanner.product}`}>
                     <button type='button'>
                      {heroBanner.buttonText}
                     </button>
