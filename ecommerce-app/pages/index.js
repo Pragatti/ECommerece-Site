@@ -10,7 +10,7 @@ const Home = ({products,bannerData}) => {
        
       <div className='products-heading'>
         <h2>
-          Beset Selling Products
+          Best Selling Products
         </h2>
         <p>
           Speakers of many variations
