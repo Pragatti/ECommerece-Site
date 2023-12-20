@@ -9,13 +9,13 @@ import { useStateContext } from '../../context/StateContext';
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty,setShowCart,cartItems,showCartHandler} = useStateContext();
+  const { decQty, incQty, qty,setShowCart,cartItems,showCartHandler,onAdd} = useStateContext();
   let isProductExist = cartItems?.find((item) => item._id === product?._id);
 
   const handleBuyNow = (product, qty) => {
     showCartHandler(true);
     if (!isProductExist) {
-      addProductToCart(product, qty);
+      onAdd(product,qty);
     }
   };
 
@@ -76,7 +76,7 @@ const ProductDetails = ({ product, products }) => {
               onClick={() =>
                 isProductExist
                   ? setShowCart(true)
-                  : addProductToCart(product, qty)
+                  : onAdd(product, qty)
               }
             >
               {`${isProductExist ? "Go" : "Add"} to Cart`}
